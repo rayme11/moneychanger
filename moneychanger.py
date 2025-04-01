@@ -95,7 +95,7 @@ def run_pipeline(user_input: str) -> None:
     Call get_exchange_rate(...) if necessary"""
 
     response = call_llm(user_input)
-    st.write(response)
+    #st.write(response)
 
     if response.choices[0].finish_reason=='tool_calls':
         response_arguments = json.loads(response.choices[0].message.tool_calls[0].function.arguments)
